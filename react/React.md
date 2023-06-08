@@ -6,6 +6,8 @@
 6. <a href="#czzs_dom">操作真实 dom</a>
 7. <a href="#father_invoke_child">父组件调用子组件的方法</a>
 8. <a href="#hqzxdz">获取最新的值</a>
+9. <a href="#dom_diff">获取最新的值</a>
+10. <a href="#dom_key">key 的作用</a>
 
 ## <span id="babel_jx_jsx">babel 解析 jsx 语法工作流</span>
 
@@ -43,3 +45,21 @@
 ## <span id="hqzxdz">获取最新的值</span>
 
 -   由于闭包，有时候并不能获得变量的最新值，我们可以使用 useRef 存值改值取值，获取最新的值，因为 useRef 返回的 ref 是单例的
+
+## <span id="dom_diff">dom diff</span>
+
+-   算法
+
+    1.  生成 oldChildren 的映射
+    2.  遍历 newChildren,根据 lastPlacedIndex 生成补丁包（patch）（标记了需要 MOVE 和 PLACEMENT 的节点）
+    3.  删掉所有需要移动和删除的节点
+    4.  执行补丁包
+
+-   特点
+    -   只对同级节点进行对比，如果 dom 节点跨层级移动，则 React 不会复用
+    -   不同类型的元素会产出不同的结构，会销毁老结构，创建新结构
+    -   可以通过 key 标识移动的元素
+
+## <span id="dom_key">key 的作用</span>
+
+-   key 是元素的“身份证”，dom diff 的时候会根据 key 来标识元素，dom diff 只会比较同层级的元素，所以在列表渲染的时候给元素加上 key
