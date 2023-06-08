@@ -1,0 +1,17 @@
+1. <a href="#event_circle">事件循环</a>
+2. <a href="#sjwt">事件委托</a>
+3. <a href="js_cache">js 缓存</a>
+
+<span id="event_circle">事件循环</span>
+
+-   js 自上而下执行，遇到同步代码就直接执行，遇到异步代码就先放到异步队列中，等同步代码执行完之后，再将异步队列中的代码读取到主执行栈中执行。这个过程循环的执行就是事件循环。每进行一次事件循环操作成为 tick,里边有两个词，微任务，宏任务，先执行微任务，后执行宏任务。ps:微任务有 promise,mutationObserver,process.nextTick(nodejs)等；宏任务有：setTimeout,setInterval,setImmediate(nodejs),script 整体代码,I/O,UI 交互。
+
+<span id="sjwt"> 事件委托</span>
+
+-   利用事件冒泡的特性，将本应该注册在子元素上的处理事件注册在父元素上。这样做的优势有：减少 DOM 操作，提高性能；随时可以添加子元素，添加的子元素会自动有相应的处理事件。ps:事件冒泡:触发事件时,首先在触发元素寻找是否有响应的注册事件，如果没有再继续向上级父元素寻找是否有相应的注册事件作出回应，这就是事件冒泡。
+
+<span id="js_cache">js 缓存</span>
+
+-   缓存的好处：减轻对内存的占用，提升用户体验
+-   本地存储：sessionStorage,localStorage
+    cookie
