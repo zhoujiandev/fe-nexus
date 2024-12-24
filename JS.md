@@ -4,7 +4,7 @@
 
 <span id="event_circle">事件循环</span>
 
--   js 自上而下执行，遇到同步代码就直接执行，遇到异步代码就先放到异步队列中，等同步代码执行完之后，再将异步队列中的代码读取到主执行栈中执行。这个过程循环的执行就是事件循环。每进行一次事件循环操作成为 tick,里边有两个词，微任务，宏任务，先执行微任务，后执行宏任务。ps:微任务有 promise,mutationObserver,process.nextTick(nodejs)等；宏任务有：setTimeout,setInterval,setImmediate(nodejs),script 整体代码,I/O,UI 交互。
+-   js 自上而下执行，遇到同步代码就直接执行，遇到异步代码就先放到异步队列中，等同步代码执行完之后，再将异步队列中的代码读取到主执行栈中执行。这个过程循环的执行就是事件循环。每进行一次事件循环操作称为 tick,里边有两个词，微任务，宏任务，先执行微任务，后执行宏任务。ps:微任务有 promise,mutationObserver,process.nextTick(nodejs)等；宏任务有：setTimeout,setInterval,setImmediate(nodejs),script 整体代码,I/O,UI 交互。
 
 <span id="sjwt"> 事件委托</span>
 
