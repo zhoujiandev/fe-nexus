@@ -2,8 +2,8 @@
   "insertPragma": false,
   "singleQuote": false,
   "trailingComma": "none",
-  "printWidth": 160,
-  "tabWidth": 2,
+  "printWidth": 120,
+  "tabWidth": 4,
   "overrides": [
     {
       "files": ".prettierrc",
