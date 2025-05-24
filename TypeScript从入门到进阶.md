@@ -2881,8 +2881,6 @@ export const connected: Connected = connect(new EffectModule());
 
 [namespace-and-module](https://blog.higan.me/namespace-and-module-in-typescript/)
 
- 
-
 ### 11.1 模块
 
 #### 11.1.1 全局模块
@@ -2980,19 +2978,25 @@ var Numbers;
 
 #### 11.3.1 文件和模块
 
-每个 module都不一样 src\table1.ts
+每个 module都不一样 
+
+src\table1.ts
 
 ```ts
-JavaScript
 export module Box{
   export class Book1{}
 }
+```
+
 src\table2.ts
-JavaScript
+
+```ts
 export module Box{
     export class Book1{}
 }
 ```
+
+src\table3.ts
 
 ```ts
 export module Box{
@@ -3052,7 +3056,7 @@ export class Book1 { }
 
 ## 12类型声明
 
-- 声明文件可以让我们不需要将JS重构为TS，只需要加上声明文件就可以使用系统
+- 声明文件可以让我们不需要将JS重构为TS，只需要加上声明文件就可以使用类型提示
 - 类型声明在编译的时候都会被删除，不会影响真正的代码
 - 关键字 declare 表示声明的意思,我们可以用它来做出各种声明
 
@@ -3287,7 +3291,9 @@ $.ajax('get');
 #### 12.5.4 npm声明文件可能的位置
 
 - node_modules/jquery/package.json
-- "types":"types/xxx.d.ts"
+  - "types":"types/xxx.d.ts"
+  - "typings":"types/xxx.d.ts"
+- node_modules/jquery/jquery.d.ts
 - node_modules/jquery/index.d.ts
 - node_modules/@types/jquery/index.d.ts
 - typings\jquery\index.d.ts
