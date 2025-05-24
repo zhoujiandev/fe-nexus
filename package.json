@@ -1,0 +1,16 @@
+{
+  "name": "fe-nexus",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:jianchau/fe-nexus.git",
+  "author": "jianchau <ajianchau@gmail.com>",
+  "license": "MIT",
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ]
+  }
+}
